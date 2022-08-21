@@ -22,9 +22,8 @@ app.use(express.json());
 app.use('/', routes); //to use the routes
 
 // add this below app.use("/", routes) to make index.html a static file
-app.route('/')
-  .get(function (req, res) {
-    res.sendFile(process.cwd() + '/index.html');
+app.route("/").get(function (req, res) {
+  res.sendFile(process.cwd() + "/index.html");
 });
 
 const listener = app.listen(process.env.PORT || 3000, () => {
